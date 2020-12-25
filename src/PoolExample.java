@@ -16,7 +16,9 @@ public class PoolExample {
             if (!executor1.isShutdown()) {
                 try {
                     executor1.getQueue().put(r);
-                } catch (InterruptedException e) {}
+                } catch (InterruptedException e) {
+                    // ignore
+                }
             }
         });
         executor.setRejectedExecutionHandler(handler);
